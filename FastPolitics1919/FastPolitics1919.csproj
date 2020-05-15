@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27F8A5EF-4475-43B5-AA58-76943CC76DB5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FastPolitics1919</RootNamespace>
+    <AssemblyName>FastPolitics1919</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Apis, Version=1.45.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.45.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.45.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.45.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.45.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.45.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.45.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.45.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.45.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.45.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Sheets.v4, Version=1.45.0.1930, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Sheets.v4.1.45.0.1930\lib\net45\Google.Apis.Sheets.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Army.cs" />
+    <Compile Include="Common\Bank.cs" />
+    <Compile Include="Common\BankAccount.cs" />
+    <Compile Include="Common\Battle.cs" />
+    <Compile Include="Common\Building.cs" />
+    <Compile Include="Common\Citizen.cs" />
+    <Compile Include="Common\City.cs" />
+    <Compile Include="Common\Country.cs" />
+    <Compile Include="Common\Culture.cs" />
+    <Compile Include="Common\Event.cs" />
+    <Compile Include="Common\FPAction.cs" />
+    <Compile Include="Common\Government.cs" />
+    <Compile Include="Common\Ideology.cs" />
+    <Compile Include="Common\Landscape.cs" />
+    <Compile Include="Common\Map.cs" />
+    <Compile Include="Common\MapMode.cs" />
+    <Compile Include="Common\Order.cs" />
+    <Compile Include="Common\ParlamentSeat.cs" />
+    <Compile Include="Common\Party.cs" />
+    <Compile Include="Common\PathFinderTile.cs" />
+    <Compile Include="Common\Person.cs" />
+    <Compile Include="Common\Player.cs" />
+    <Compile Include="Common\Profession.cs" />
+    <Compile Include="Common\Province.cs" />
+    <Compile Include="Common\Rank.cs" />
+    <Compile Include="Common\Relation.cs" />
+    <Compile Include="Common\Round.cs" />
+    <Compile Include="Common\Tile.cs" />
+    <Compile Include="Common\Title.cs" />
+    <Compile Include="Common\Tooltips.cs" />
+    <Compile Include="Common\Unit.cs" />
+    <Compile Include="Data\Client\ConsoleHandler.cs" />
+    <Compile Include="Data\Common\BuildProcess.cs" />
+    <Compile Include="Data\Common\BuildProcesses\BuildingProcess.cs" />
+    <Compile Include="Data\Common\BuildProcesses\DebugProcess.cs" />
+    <Compile Include="Data\Common\BuildProcesses\FoundCityProcess.cs" />
+    <Compile Include="Data\Common\GameObject.cs" />
+    <Compile Include="Data\Common\IIdentification.cs" />
+    <Compile Include="Data\Common\IProcess.cs" />
+    <Compile Include="Data\Common\MapObject.cs" />
+    <Compile Include="Data\Common\MapObjects\HexagonTile.cs" />
+    <Compile Include="Data\Common\ModifiableObject.cs" />
+    <Compile Include="Data\Common\Modifier.cs" />
+    <Compile Include="Data\Common\ModifierItem.cs" />
+    <Compile Include="Data\Common\ModifierProperty.cs" />
+    <Compile Include="Data\GoogleTabellen\GoogleCell.cs" />
+    <Compile Include="Data\GoogleTabellen\GoogleCellCoordinate.cs" />
+    <Compile Include="Data\GoogleTabellen\GoogleSheet.cs" />
+    <Compile Include="Data\GoogleTabellen\SheetOrigin.cs" />
+    <Compile Include="Data\Handlers\ColorHandler.cs" />
+    <Compile Include="Data\Handlers\DragHandler.cs" />
+    <Compile Include="Data\Handlers\HoverHandler.cs" />
+    <Compile Include="Data\Handlers\TextHandler.cs" />
+    <Compile Include="Data\LogWriter.cs" />
+    <Compile Include="Data\Managers\Manager.cs" />
+    <Compile Include="Data\Managers\WindowManager.cs" />
+    <Compile Include="Data\Tmp\ContentGenerator.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Events\PlayerEvent.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Gfx\Images.cs" />
+    <Compile Include="History\Actions\AddRelation.cs" />
+    <Compile Include="History\Actions\Follower.cs" />
+    <Compile Include="History\Actions\JoinParty.cs" />
+    <Compile Include="History\Actions\LeaveParty.cs" />
+    <Compile Include="History\Actions\RemoveRelation.cs" />
+    <Compile Include="History\Actions\TalkTo.cs" />
+    <Compile Include="History\Buildings\Bank.cs" />
+    <Compile Include="History\Buildings\Bürgerbräukeller.cs" />
+    <Compile Include="History\Buildings\BürgerbräukellerParty.cs" />
+    <Compile Include="History\Buildings\GovernmentBuilding.cs" />
+    <Compile Include="History\Buildings\MilitaryBuilding.cs" />
+    <Compile Include="History\Buildings\PartyBuilding.cs" />
+    <Compile Include="History\Buildings\SimpleGovernmentBuilding.cs" />
+    <Compile Include="History\Buildings\UniqueBuilding.cs" />
+    <Compile Include="History\Buildings\ZirkusKrone.cs" />
+    <Compile Include="History\Cultures\Cultures.cs" />
+    <Compile Include="History\Events\PlayerTestEvent.cs" />
+    <Compile Include="History\Governments\CityGovernment.cs" />
+    <Compile Include="History\Governments\CountryGovernment.cs" />
+    <Compile Include="History\Governments\ProvinceGovernment.cs" />
+    <Compile Include="History\Ideologies\Communist.cs" />
+    <Compile Include="History\Ideologies\Conservative.cs" />
+    <Compile Include="History\Ideologies\Democrat.cs" />
+    <Compile Include="History\Ideologies\Fascist.cs" />
+    <Compile Include="History\Ideologies\Liberal.cs" />
+    <Compile Include="History\MapModes\MilitaryUnits.cs" />
+    <Compile Include="History\MapModes\NeighbourMode.cs" />
+    <Compile Include="History\MapModes\PartyCity.cs" />
+    <Compile Include="History\MapModes\PoliticalCountry.cs" />
+    <Compile Include="History\MapModes\PoliticalProvince.cs" />
+    <Compile Include="History\MapModes\PoliticalTile.cs" />
+    <Compile Include="History\MapModes\Population.cs" />
+    <Compile Include="History\MapModes\TileType.cs" />
+    <Compile Include="History\Orders\MoveOrder.cs" />
+    <Compile Include="History\Professions\Commander.cs" />
+    <Compile Include="History\Professions\Politician.cs" />
+    <Compile Include="History\Professions\Soldier.cs" />
+    <Compile Include="History\Ranks\MilitaryRank.cs" />
+    <Compile Include="History\Ranks\RankTypes.cs" />
+    <Compile Include="History\Titles\ArmyLeader.cs" />
+    <Compile Include="History\Titles\CityFounder.cs" />
+    <Compile Include="History\Titles\MilitaryRank.cs" />
+    <Compile Include="History\Titles\PartyFounder.cs" />
+    <Compile Include="History\Units\Attachment.cs" />
+    <Compile Include="History\Units\Attachments\RegularCavalry.cs" />
+    <Compile Include="History\Units\Attachments\RegularInfantry.cs" />
+    <Compile Include="History\Units\Attachments\RegularRebel.cs" />
+    <Compile Include="History\Units\Bataillon.cs" />
+    <Compile Include="History\Units\Companies\RebelCompany.cs" />
+    <Compile Include="History\Units\Company.cs" />
+    <Compile Include="History\Units\Division.cs" />
+    <Compile Include="History\Units\HQ.cs" />
+    <Compile Include="History\Units\Hqs\RedHQ.cs" />
+    <Compile Include="History\Units\Regiment.cs" />
+    <Compile Include="History\Units\UnitTypes.cs" />
+    <Compile Include="Interface\BaseInterface.cs" />
+    <Compile Include="Interface\GameWindow.xaml.cs">
+      <DependentUpon>GameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Game\CitySubWindow.cs" />
+    <Compile Include="Interface\Game\CityWindow.xaml.cs">
+      <DependentUpon>CityWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Game\EventSubWindow.cs" />
+    <Compile Include="Interface\Game\EventWindow.xaml.cs">
+      <DependentUpon>EventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Game\GameInterface.cs" />
+    <Compile Include="Interface\Game\PersonSubWindow.cs" />
+    <Compile Include="Interface\Game\PersonWindow.xaml.cs">
+      <DependentUpon>PersonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Game\ProvinceSubWindow.cs" />
+    <Compile Include="Interface\Game\ProvinceWindow.xaml.cs">
+      <DependentUpon>ProvinceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Game\UnitCounter.xaml.cs">
+      <DependentUpon>UnitCounter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\SubWindow.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibFastPolitics1919\LibFastPolitics1919.csproj">
+      <Project>{a26ec196-3ecd-4470-a628-46f9e9a8e1fb}</Project>
+      <Name>LibFastPolitics1919</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Client\ConsoleInfo\" />
+    <Folder Include="History\Countries\" />
+    <Folder Include="Localisation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Interface\GameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interface\Game\CityWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interface\Game\EventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interface\Game\PersonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interface\Game\ProvinceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interface\Game\UnitCounter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\icon_questionmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\persons\_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\persons\icon_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\army\default_counters\counter_infantry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\flags\REB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\BlackIce\size_oberkommando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\BlackIce\hq_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\BlackIce\infantry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gfx\BlackIce\size_8.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

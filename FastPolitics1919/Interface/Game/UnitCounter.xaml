@@ -1,0 +1,21 @@
+﻿<Window x:Class="FastPolitics1919.Interface.Game.UnitCounter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FastPolitics1919.Interface.Game"
+        mc:Ignorable="d"
+        Title="UnitCounter" Height="450" Width="800">
+    <Grid Background="Black">
+        <Grid x:Name="grid" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border x:Name="border_unit" Background="#FF35403A" BorderBrush="#FF080B0A" BorderThickness="2" CornerRadius="4" Width="50" Height="50">
+                <StackPanel Margin="2">
+                    <Image x:Name="img_unit_size" Source="C:\_Default\VisualStudio\FastPolitics1919\LibFastPolitics1919\FastPolitics1919\bin\Debug\gfx\army\default_sizes\size_8.png" Height="10" HorizontalAlignment="Center" />
+                    <Border Background="White" BorderBrush="#FF535353" BorderThickness="1" CornerRadius="2" Margin="0,1,0,0" Height="25" Width="36">
+                        <Image x:Name="img_unit_counter" Source="pack://siteoforigin:,,,/bin/Debug/gfx/BlackIce/hq_1.png" />
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

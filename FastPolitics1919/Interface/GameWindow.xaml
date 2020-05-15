@@ -1,0 +1,269 @@
+﻿<Window x:Class="FastPolitics1919.Interface.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FastPolitics1919.Interface"
+        mc:Ignorable="d"
+        Title="GameWindow" Height="1081" Width="1460" WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border" Background="{x:Null}">
+                                <ContentPresenter x:Name="ContentSite" ContentSource="Header"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <ScrollViewer x:Name="viewer" HorizontalScrollBarVisibility="Hidden" Background="#FFCBCBCB" VerticalScrollBarVisibility="Hidden">
+            <Grid x:Name="grid" Background="#FF919191" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </ScrollViewer>
+        <!-- GUI -->
+        <Grid x:Name="gui_grid">
+            <!-- Debug GUI -->
+            <Button x:Name="btn_debug" Content="Current Round is : " HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+
+            <!-- Top Info -->
+            <Grid Height="65" VerticalAlignment="Top" HorizontalAlignment="Right" >
+                <Border Width="800" Background="#FF35444D" Margin="0,3,0,0" BorderBrush="#FF1F1F1F" HorizontalAlignment="Right" BorderThickness="30,2,0,2" CornerRadius="20,0,0,20" >
+                    <StackPanel x:Name="panel_top" Orientation="Horizontal" Margin="5,10,0,10">
+                        <!-- Money -->
+                        <Border Background="#FF999999" BorderBrush="#FF444444" BorderThickness="2" CornerRadius="12" MinWidth="100" Margin="0,0,20,0" >
+                            <Grid>
+                                <Image x:Name="img_money" Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="5,0,0,0" HorizontalAlignment="Left" />
+                                <Label x:Name="lbl_money" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Content="0.000.000,00" FontSize="20" FontFamily="Century Gothic" Foreground="White" FontWeight="Bold" Margin="40,0,10,0" HorizontalAlignment="Right" />
+                            </Grid>
+                        </Border>
+
+                        <!-- Time -->
+                        <Border Background="#FF999999" BorderBrush="#FF444444" BorderThickness="2" CornerRadius="12" MinWidth="90" Margin="0,0,20,0" >
+                            <Grid>
+                                <Image x:Name="img_time" Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="5,0,0,0" HorizontalAlignment="Left" />
+                                <Label x:Name="lbl_time" Content="000 / 000" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="20" FontFamily="Century Gothic" Foreground="White" FontWeight="Bold" Margin="40,0,10,0" HorizontalAlignment="Left" />
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Map modes implemented -->
+            <Border x:Name="gui_border_right_bottom_imp" Background="#FF35444D" BorderBrush="#99CBA112" HorizontalAlignment="Right" BorderThickness="2,2,0,2" VerticalAlignment="Bottom" CornerRadius="30,0,0,30" Width="30" Height="210" Margin="0,0,0,50" >
+                <Label Content="Map Modi" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0" VerticalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontFamily="Bookman Old Style" FontSize="20" HorizontalContentAlignment="Center" Width="110" RenderTransformOrigin="0.5,0.5" Margin="-40,40,-45,40" Foreground="#FFDADADA" >
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+            </Border>
+            <!-- Map modes expanded -->
+            <Border x:Name="gui_border_right_bottom_exp" Background="#FF35444D" BorderBrush="#99CBA112" HorizontalAlignment="Right" BorderThickness="2,2,0,2" VerticalAlignment="Bottom" CornerRadius="10,0,0,10" Width="140" Height="210" Margin="0,0,0,50" >
+                <StackPanel x:Name="gui_panel_mapmodes" Margin="3">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,4">
+                        <!-- Vorlage -->
+                        <Border BorderBrush="#FFCBA112" BorderThickness="1" CornerRadius="10" Width="30" Height="30" Background="#FF4C518B" Margin="0,0,4,0" >
+                            <Button x:Name="btn_mapmode_city" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Tag="0" Margin="1" >
+                                <Image Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="-3" />
+                            </Button>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Version -->
+            <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20">
+                <StackPanel Margin="15,0" Background="#FFBFBFBF">
+                    <Label Content="Under Development" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF272727" FontFamily="Bell MT" FontWeight="Bold" FontSize="18" Margin="0" />
+                    <Label x:Name="lbl_version" Content="- Currently, Alpha Build 0x12a3 -" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontStyle="Italic" Foreground="#FF858585" FontWeight="Bold" FontFamily="Bodoni MT" FontSize="20" />
+                </StackPanel>
+            </Grid>
+
+            <!-- Gui Bottom left -->
+            <Grid x:Name="grid_bottom_gui" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <Border Background="#FF35444D" BorderBrush="Black" BorderThickness="1,5,5,1" CornerRadius="0,100,0,0" Width="700" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+                <StackPanel HorizontalAlignment="Left" Margin="40,0,0,15" Orientation="Horizontal">
+                    <!-- Person -->
+                    <Border Background="#FF5D5D5D" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Height="220" >
+                        <Button x:Name="btn_bottom_person" Padding="0" Margin="3">
+                            <Image x:Name="img_bottom_person" Source="pack://siteoforigin:,,,/bin/Debug/gfx/persons/icon_person.png" />
+                        </Button>
+                    </Border>
+                    <!-- Person Infos -->
+                    <StackPanel VerticalAlignment="Bottom" Margin="20,0,0,0">
+                        <Label x:Name="lbl_bottom_person_name" Padding="0" VerticalContentAlignment="Center" Content="Person Name" FontFamily="Berlin Sans FB Demi" FontSize="36" Foreground="White" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <!-- Unit Infos -->
+            <Grid x:Name="gui_grid_unit_left" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,50,0,0">
+                <StackPanel >
+                    <StackPanel x:Name="panel_unit_parents" Margin="0,0,0,2">
+                        <Button x:Name="btn_unit_parent" Background="#CC1E8919" BorderBrush="#FF08662E" Foreground="White" FontFamily="SimSun-ExtB" FontWeight="Bold" FontSize="14" Padding="0,1" Content="Vollständiger Name der Parent-Einheit" Margin="0,1,0,0" />
+                    </StackPanel>
+                    <Border BorderBrush="#FF464646" BorderThickness="5" CornerRadius="5" Margin="0">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                <GradientStop Color="#FF393F29" Offset="0"/>
+                                <GradientStop Color="#FF969775" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel Margin="1">
+                            <!-- Top -->
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image x:Name="img_unit_commander" Source="pack://siteoforigin:,,,/bin/Debug/gfx/persons/icon_person.png" Height="50" />
+                                    <!-- Counter -->
+                                    <StackPanel Margin="4,0" VerticalAlignment="Center">
+                                        <Image x:Name="img_unit_main_size" Source="C:\_Default\VisualStudio\FastPolitics1919\LibFastPolitics1919\FastPolitics1919\bin\Debug\gfx\army\default_sizes\size_8.png" Height="9" HorizontalAlignment="Center" />
+                                        <Image x:Name="img_unit_main_counter" Source="pack://siteoforigin:,,,/bin/Debug/gfx/BlackIce/infantry.png" Height="30" HorizontalAlignment="Center" />
+                                    </StackPanel>
+                                    <StackPanel Margin="0" Width="400">
+                                        <Label x:Name="lbl_unit_name" FontSize="16" FontFamily="SimSun" Padding="5,1" Content="Vollständiger Name der Einheit" Foreground="#FFE4E4E4" FontWeight="Bold" BorderBrush="#FF535353" BorderThickness="1" Margin="0,1" Width="400" >
+                                            <Label.Background>
+                                                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                                    <GradientStop Color="#FF577265"/>
+                                                    <GradientStop Color="#FF82A68C" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Label.Background>
+                                        </Label>
+                                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Width="400">
+                                            <Label x:Name="lbl_unit_commander" FontSize="16" FontFamily="SimSun" Padding="5,1" Content="Vollständiger Befehlshabername" Foreground="Black" Background="#FF94967B" FontWeight="Bold" BorderBrush="#FF535353" BorderThickness="1" Margin="0,0,2,0" Width="328" />
+                                            <Label x:Name="lbl_unit_amount" FontSize="16" FontFamily="SimSun" Padding="5,1" Content="000,000" Foreground="Black" Background="#FFA7AC6D" FontWeight="Bold" BorderBrush="#FF535353" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="70" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Margin="3,1,5,1">
+                                        <Button x:Name="btn_unit_exit" Padding="0" Foreground="White" BorderBrush="#FF838383" Background="#FF636363" Content="X" Width="22" />
+                                        <Grid Margin="0,2,0,0" Height="29">
+                                            <ProgressBar x:Name="proBar_unit_strenght" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFA56108" Background="#FFACACAC" Orientation="Vertical" HorizontalAlignment="Left" Width="9" Value="45" />
+                                            <ProgressBar x:Name="proBar_unit_org" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FF187931" Background="#FFACACAC" Orientation="Vertical" HorizontalAlignment="Right" Width="9" Value="45" />
+                                        </Grid>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+
+                            <!-- Infos -->
+                            <StackPanel Margin="5">
+                                <Grid>
+                                    <Label x:Name="lbl_unit_location" Padding="5,0,0,0" Content="Location-Name" Background="#FF9C9F84" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Width="220" />
+                                    <Button x:Name="btn_unit_link" HorizontalAlignment="Right" Background="#FFB6BB93" BorderBrush="Black" FontWeight="Bold" Padding="5,0" Content="Linkup" />
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Height="22" Margin="0,2,0,0">
+                                    <StackPanel.Background>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF522B29" Offset="0"/>
+                                            <GradientStop Color="#FF582C29" Offset="1"/>
+                                            <GradientStop Color="#CCB45D54" Offset="0.5"/>
+                                        </LinearGradientBrush>
+                                    </StackPanel.Background>
+                                    <Label x:Name="lbl_unit_order" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="487" Content="Kein Befehl" FontWeight="Bold" />
+                                    <Button x:Name="btn_unit_order_cancel" Padding="0" Foreground="White" BorderBrush="#FF838383" Background="#FF636363" Content="X" HorizontalAlignment="Left" Margin="1" Width="19" />
+                                </StackPanel>
+                            </StackPanel>
+
+                            <!-- LocalUnits -->
+                            <StackPanel Margin="0,10,0,0">
+                                <StackPanel Orientation="Horizontal" Background="#E552572B">
+                                    <Label x:Name="lbl_unit_localunit_count" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#FFFFBD00" Content="00" Margin="5,0" FontSize="14" />
+                                    <Label Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="White" Content="Lokale Einheiten" Margin="0,0,5,0" FontSize="14" />
+                                </StackPanel>
+                                <ScrollViewer VerticalScrollBarVisibility="Hidden" MaxHeight="350">
+                                    <StackPanel x:Name="panel_unit_localunits" Margin="0,3,0,0">
+                                        <Border x:Name="border_localunit_vorlage" BorderBrush="#FF635950" BorderThickness="1" CornerRadius="2" Height="35" Margin="0,0,0,5">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                                    <GradientStop Color="#E5A59A73" Offset="0"/>
+                                                    <GradientStop Color="#E5E4D7AD" Offset="0.48"/>
+                                                    <GradientStop Color="#E5A59A73" Offset="1"/>
+                                                    <GradientStop Color="#E5E4D7AD" Offset="0.571"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <StackPanel Orientation="Horizontal">
+                                                <!-- Counter -->
+                                                <StackPanel Margin="2,0" VerticalAlignment="Center" Width="40">
+                                                    <Image x:Name="img_localunit_size" Source="C:\_Default\VisualStudio\FastPolitics1919\LibFastPolitics1919\FastPolitics1919\bin\Debug\gfx\army\default_sizes\size_8.png" Height="8" HorizontalAlignment="Center" />
+                                                    <Image x:Name="img_localunit_counter" Source="pack://siteoforigin:,,,/bin/Debug/gfx/BlackIce/infantry.png" Height="20" HorizontalAlignment="Center" Stretch="Fill" />
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal" Margin="0" VerticalAlignment="Center">
+                                                    <Label x:Name="lbl_localunit_name" FontSize="16" FontFamily="Sylfaen" Padding="0" Content="Vollständiger Befehlshabername" Foreground="Black" Background="{x:Null}" FontWeight="Bold" BorderThickness="1" Margin="0,0,2,0" Width="337" />
+                                                    <Label x:Name="lbl_localunit_size" FontSize="16" FontFamily="SimSun" Padding="0" Content="000,000" Foreground="Black" Background="{x:Null}" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="70" />
+                                                </StackPanel>
+                                                <Grid Margin="0,1" Width="62">
+                                                    <ProgressBar x:Name="proBar_localunit_strenght" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFA56108" Background="#FFACACAC" Value="45" VerticalAlignment="Top" Height="10" Margin="0,4,0,0" />
+                                                    <ProgressBar x:Name="proBar_localunit_org" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FF187931" Background="#FFACACAC" Value="45" VerticalAlignment="Bottom" Height="10" Margin="0,0,0,4" />
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+
+                            <!-- SubUnits -->
+                            <StackPanel Margin="0,10,0,0">
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal" Background="#E552572B">
+                                        <Label x:Name="lbl_unit_subunit_count" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#FFFFBD00" Content="00" Margin="5,0" FontSize="14" />
+                                        <Label Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="White" Content="Untergeordnete Einheiten" Margin="0" FontSize="14" />
+                                    </StackPanel>
+                                    <Label x:Name="lbl_unit_subunit_amount" Padding="0" VerticalContentAlignment="Center" FontFamily="SimSun" FontWeight="Bold" Foreground="Black" Content="000,000" Margin="0,0,5,0" FontSize="14" HorizontalAlignment="Right" />
+                                </Grid>
+                                <ScrollViewer VerticalScrollBarVisibility="Hidden" MaxHeight="350">
+                                    <StackPanel x:Name="panel_unit_subunits" Margin="0,3,0,0">
+                                        <Border x:Name="border_unit_vorlage" BorderBrush="#FF635950" BorderThickness="2" CornerRadius="2" Height="35" Margin="0,0,0,5">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                                    <GradientStop Color="#E5A6AA6C" Offset="0"/>
+                                                    <GradientStop Color="#E57A7557" Offset="1"/>
+                                                    <GradientStop Color="#E5858254" Offset="0.722"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <StackPanel Orientation="Horizontal">
+                                                <!-- Counter -->
+                                                <StackPanel Margin="2,0" VerticalAlignment="Center" Width="40">
+                                                    <Image x:Name="img_subunit_size" Source="C:\_Default\VisualStudio\FastPolitics1919\LibFastPolitics1919\FastPolitics1919\bin\Debug\gfx\army\default_sizes\size_8.png" Height="8" HorizontalAlignment="Center" />
+                                                    <Image x:Name="img_subunit_counter" Source="pack://siteoforigin:,,,/bin/Debug/gfx/BlackIce/infantry.png" Height="20" HorizontalAlignment="Center" Stretch="Fill" />
+                                                </StackPanel>
+                                                <StackPanel>
+                                                    <Grid Width="408">
+                                                        <StackPanel Orientation="Horizontal" Margin="0" VerticalAlignment="Top" Background="#7F6B6D52">
+                                                            <Label x:Name="lbl_subunit_name" FontFamily="Verdana" Padding="0" Content="Vollständiger Einheitenname" Foreground="#FFFFBD00" Background="{x:Null}" FontWeight="Bold" BorderThickness="1" Margin="5,0,2,0" />
+                                                            <Label x:Name="lbl_subunit_commander" FontFamily="Verdana" Padding="0" Content="(Befehlshaber)" Foreground="White" Background="{x:Null}" FontWeight="Bold" BorderThickness="1" Margin="0,0,2,0" />
+                                                        </StackPanel>
+                                                        <Label x:Name="lbl_subunit_size" FontFamily="SimSun" Padding="0" Content="000,000" Foreground="Black" Background="{x:Null}" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="60" FontWeight="Bold" HorizontalAlignment="Right" />
+
+                                                    </Grid>
+                                                    <StackPanel x:Name="panel_subunit_status" Orientation="Horizontal" Height="14">
+
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                <Grid Margin="0,1" Width="62">
+                                                    <ProgressBar x:Name="proBar_subunit_strenght" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFA56108" Background="#FFACACAC" Value="45" VerticalAlignment="Top" Height="10" Margin="0,3,1,0" />
+                                                    <ProgressBar x:Name="proBar_subunit_org" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FF187931" Background="#FFACACAC" Value="45" VerticalAlignment="Bottom" Height="10" Margin="0,0,1,3" />
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

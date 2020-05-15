@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibFastPolitics1919", "LibFastPolitics1919\LibFastPolitics1919.csproj", "{A26EC196-3ECD-4470-A628-46F9E9A8E1FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastPolitics1919", "FastPolitics1919\FastPolitics1919.csproj", "{27F8A5EF-4475-43B5-AA58-76943CC76DB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdaterFastPolitics1919", "UpdaterFastPolitics1919\UpdaterFastPolitics1919.csproj", "{4F2422FE-74A8-48E0-BC9E-BBE1A8B76C67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastPoliticsGame", "..\..\FastPolitics\FastPoliticsGame\FastPoliticsGame.csproj", "{B4954A8A-1936-428B-9376-3605BA64171A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F4-EventManager", "..\..\F4\F4-EventManager\F4-EventManager\F4-EventManager.csproj", "{8F6DC410-E866-4485-A3DA-9AB8ED89B489}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastPoliticsHexTest", "FastPoliticsHexTest\FastPoliticsHexTest.csproj", "{5F2A7D7B-E5F2-4B44-B372-5B1EC76B51C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastPoliticsEditor", "..\..\FastPolitics\FastPoliticsEditor\FastPoliticsEditor.csproj", "{4F832165-F8BD-4787-AD89-459592E894A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{A26EC196-3ECD-4470-A628-46F9E9A8E1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A26EC196-3ECD-4470-A628-46F9E9A8E1FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A26EC196-3ECD-4470-A628-46F9E9A8E1FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F8A5EF-4475-43B5-AA58-76943CC76DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F8A5EF-4475-43B5-AA58-76943CC76DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F8A5EF-4475-43B5-AA58-76943CC76DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F8A5EF-4475-43B5-AA58-76943CC76DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2422FE-74A8-48E0-BC9E-BBE1A8B76C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2422FE-74A8-48E0-BC9E-BBE1A8B76C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2422FE-74A8-48E0-BC9E-BBE1A8B76C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2422FE-74A8-48E0-BC9E-BBE1A8B76C67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4954A8A-1936-428B-9376-3605BA64171A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4954A8A-1936-428B-9376-3605BA64171A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4954A8A-1936-428B-9376-3605BA64171A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4954A8A-1936-428B-9376-3605BA64171A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6DC410-E866-4485-A3DA-9AB8ED89B489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6DC410-E866-4485-A3DA-9AB8ED89B489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6DC410-E866-4485-A3DA-9AB8ED89B489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6DC410-E866-4485-A3DA-9AB8ED89B489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F2A7D7B-E5F2-4B44-B372-5B1EC76B51C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F2A7D7B-E5F2-4B44-B372-5B1EC76B51C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F2A7D7B-E5F2-4B44-B372-5B1EC76B51C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F2A7D7B-E5F2-4B44-B372-5B1EC76B51C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F832165-F8BD-4787-AD89-459592E894A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F832165-F8BD-4787-AD89-459592E894A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F832165-F8BD-4787-AD89-459592E894A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F832165-F8BD-4787-AD89-459592E894A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

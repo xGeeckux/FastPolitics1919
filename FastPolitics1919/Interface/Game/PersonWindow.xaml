@@ -1,0 +1,199 @@
+﻿<Window x:Class="FastPolitics1919.Interface.Game.PersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FastPolitics1919.Interface.Game"
+        mc:Ignorable="d"
+        Title="Person" FontSize="14" FontFamily="Arial" Background="Black" Height="901.602" Width="586.568" >
+    <Grid x:Name="grid" Background="#FF44444F" Width="500" Height="800" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <StackPanel>
+            <!-- Top -->
+            <Border Background="#B2676B83" BorderBrush="#FFADADC9" BorderThickness="1" CornerRadius="2" Margin="2,10,2,5">
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Border Background="#FF61778D" BorderBrush="#FF37383E" BorderThickness="2" CornerRadius="5" Width="80">
+                        <Image x:Name="img_top_picture" Source="pack://siteoforigin:,,,/bin/Debug/gfx/persons/icon_person.png" />
+                    </Border>
+                    <StackPanel Margin="10,2,5,2">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Name:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E56095F1" FontSize="16" Margin="0,1,0,0" Width="50" />
+                            <Label x:Name="lbl_top_name" Content="Name dieser Person" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Bodoni MT" Foreground="#E5FFFFFF" FontSize="16" Width="200" />
+                            <Label Content="Alter:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E56095F1" FontSize="16" Margin="15,1,0,0" Width="50" />
+                            <Label x:Name="lbl_top_age" Content="00 Jahre alt" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Bodoni MT" Foreground="#E5FFFFFF" FontSize="16" Width="80" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="0" Width="250" HorizontalAlignment="Left">
+                                <StackPanel HorizontalAlignment="Left">
+                                    <Label Content="Aufenthaltsort:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E560F1F1" FontSize="16" Margin="0,1,0,0" />
+                                    <Label Content="Herkunft:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E560F1F1" FontSize="16" Margin="0,1,0,0" />
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Right">
+                                    <Label x:Name="lbl_top_location" Content="Location-Name" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Bodoni MT" Foreground="#E5FFFFFF" FontSize="16" />
+                                    <Label x:Name="lbl_top_origin" Content="Location-Name" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Bodoni MT" Foreground="#E5FFFFFF" FontSize="16" />
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel Margin="15,0,0,0">
+                                <Label Content="Kultur:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E56DF160" FontSize="16" Margin="0,1,0,0" />
+                                <Label x:Name="lbl_top_culture" Content="Kultur-Name" Padding="0" VerticalContentAlignment="Center" FontFamily="Bodoni MT" Foreground="#E5D8D8D8" FontSize="16" FontStyle="Italic" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="0,10,0,0" Width="250" HorizontalAlignment="Left">
+                                <StackPanel HorizontalAlignment="Left">
+                                    <Label Content="Ideology:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E5F1F160" FontSize="16" Margin="0,1,0,0" />
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Right">
+                                    <Label x:Name="lbl_top_ideology" Content="Ideology-Name" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Bodoni MT" Foreground="#E5FFFFFF" FontSize="16" />
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel Margin="15,10,0,0" Orientation="Horizontal" VerticalAlignment="Top">
+                                <Label Content="Arbeit:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E5F16060" FontSize="16" Margin="0,1,0,0" />
+                                <Label x:Name="lbl_top_employment" Content="Arbeitslos" Padding="0" VerticalContentAlignment="Center" FontFamily="Bodoni MT" Foreground="#E5D8D8D8" FontSize="16" FontStyle="Italic" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Partei:" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E5F1F160" FontSize="16" Margin="0,1,0,0" />
+                            <Label x:Name="lbl_top_party" Content="Party-Name" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Bodoni MT" Foreground="#E5FFFFFF" FontSize="16" Width="340" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Relations -->
+            <Border Background="#B2363253" BorderBrush="#FF575E6A" BorderThickness="1" CornerRadius="2" Margin="2,5">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Beziehung" Padding="0,2" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E5C9C7CB" Margin="2,0,10,0" FontStyle="Italic" FontSize="18" />
+                    <Border Background="#99000000" BorderBrush="#FFFFAE00" BorderThickness="1" CornerRadius="2" Margin="10,0,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="5,2">
+                            <Label Content="Meinung zu ihm" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E5F1AF60" FontSize="16" Margin="0,1,0,0" Width="140" HorizontalContentAlignment="Center" />
+                            <Label x:Name="lbl_relation_this_to_he" Content="-" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Book Antiqua" Foreground="#E5FFFFFF" FontSize="16" FontWeight="Bold" Width="40" />
+                        </StackPanel>
+                    </Border>
+                    <Border Background="#99000000" BorderBrush="#FFFFAE00" BorderThickness="1" CornerRadius="2" Margin="10,0,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="5,2">
+                            <Label Content="Meinung von ihm" Padding="0" VerticalContentAlignment="Center" FontFamily="Bell MT" FontWeight="Bold" Foreground="#E5F1AF60" FontSize="16" Margin="0,1,0,0" Width="140" HorizontalContentAlignment="Center" />
+                            <Label x:Name="lbl_relation_he_to_this" Content="-" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Book Antiqua" Foreground="#E5FFFFFF" FontSize="16" FontWeight="Bold" Width="40" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+            
+            <!-- Additional -->
+            <StackPanel>
+                <Border Background="#CC2A2F3C" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Padding="0" Content="&gt;" Foreground="#FFB07B1E" FontFamily="Broadway" FontSize="18" FontWeight="Bold" Margin="0,0,5,0"/>
+                            <Label x:Name="lbl_additional_title" Padding="0" Content="Höchster Titel" Foreground="White" FontFamily="Bell MT" FontSize="20" Margin="0,0,5,0"/>
+                            <Border Height="22" Margin="0,0,5,0">
+                                <Image x:Name="img_additional_title" Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="-2"/>
+                            </Border>
+                            <Label x:Name="lbl_additional_name" Padding="0" Content="Personen-Name" Foreground="#FFDEDEDE" FontFamily="Bell MT" FontSize="20" FontWeight="Bold" Margin="0,0,5,0"/>
+                            <Label Padding="0" Content="von" Foreground="White" FontFamily="Bell MT" FontSize="20" Margin="0,0,5,0"/>
+                            <Label x:Name="lbl_additional_origin" Padding="0" Content="Origin-Name" Foreground="#FFCBCBCB" FontFamily="Bell MT" FontSize="20" FontWeight="Bold" FontStyle="Italic" Margin="0,0,5,0"/>
+                        </StackPanel>
+                        <StackPanel x:Name="panel_additional_titles">
+                            <!-- Titel -->
+                            <StackPanel x:Name="panel_additional_party" Orientation="Horizontal" Margin="2,0,0,0">
+                                <Label Padding="0" Content="Vorsitzender der" Foreground="#E5F1B660" FontFamily="Bell MT" Margin="0,4,5,0" FontSize="16" />
+                                <Label x:Name="lbl_additional_party_chef" Padding="0" Content="IdeologischerName" Foreground="#E5C5B091" FontFamily="Bell MT" Margin="0,4,2,0" FontWeight="Bold" FontStyle="Italic" FontSize="16" />
+                                <Label Padding="0" Content="-Partei" Foreground="#E5F1B660" FontFamily="Bell MT" Margin="0,4,5,0" FontSize="16" />
+                            </StackPanel>
+                            <StackPanel x:Name="panel_additional_commander" Orientation="Horizontal">
+                                <Label x:Name="lbl_additional_commander_type" Content="Chef" Padding="0" Foreground="#E5C5B091" FontFamily="Bell MT" Margin="0,4,0,0" FontWeight="Bold" FontStyle="Italic" FontSize="16" />
+                                <Label Padding="0" Content="der" Foreground="#E5F1B660" FontFamily="Bell MT" Margin="5,4,5,0" FontSize="16" />
+                                <Label x:Name="lbl_additional_army_name" Content="Country-Army-Name" Padding="0" Foreground="#E5FFFFFF" FontFamily="Bodoni MT" Margin="2,4,0,0" FontWeight="Bold" FontSize="16" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="#CC2A2F3C" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2" Height="32" Width="362">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Border Height="30" Margin="0,0,2,0">
+                                <Image Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="-2"/>
+                            </Border>
+                            <Label Padding="0" Content="~00,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontWeight="Bold" FontFamily="Book Antiqua" Margin="0,0,10,0" />
+                        </StackPanel>
+                    </Border>
+                    <Border Background="#CC2A2F3C" BorderBrush="Black" BorderThickness="1" CornerRadius="3" Margin="2" Height="32" Width="130">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Border Height="24" Margin="0,0,2,0">
+                                <Image x:Name="img_additional_follower" Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="-2"/>
+                            </Border>
+                            <Label x:Name="lbl_additional_follower" Padding="0" Content="0 Anhänger" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FFA6A6A6" FontFamily="Calibri" Margin="0,0,10,0" FontStyle="Italic" Width="85" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <!-- Bottom Body -->
+                <TabControl x:Name="tab_control" Background="#99595959" Padding="0" BorderBrush="Black" BorderThickness="1,2" FontSize="16" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="2,0" Height="543" >
+                    <!-- Common Tab (Default) -->
+                    <TabItem x:Name="tab_action" Margin="0" Padding="1,1,1,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderBrush="Black" Foreground="#FF917575" Background="#FF8B4D4D" >
+                        <TabItem.Header>
+                            <Border BorderBrush="Black" Background="#FF595959" CornerRadius="2" BorderThickness="1" Margin="2,0" Height="32">
+                                <Border BorderThickness="1" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" >
+                                    <Image x:Name="img_action_header" Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="-1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="30" />
+                                </Border>
+                            </Border>
+                        </TabItem.Header>
+                        <Grid Height="509">
+                            <TreeView x:Name="tree_actions" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" >
+                                <TreeViewItem Margin="0,5,0,0" >
+                                    <TreeViewItem.Header>
+                                        <Border x:Name="border_action_vorlage" Background="#FF175EB4" BorderBrush="#FF2B273A" BorderThickness="3,1" CornerRadius="5" Margin="0">
+                                            <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Height="20" />
+                                                    <Label Padding="0" Content="Complete-Test-Text" FontSize="16" FontFamily="Bell MT" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center" Margin="2,0" />
+                                                </StackPanel>
+                                            </Button>
+                                        </Border>
+                                    </TreeViewItem.Header>
+                                    <TreeViewItem Margin="0,5,0,0" >
+                                        <TreeViewItem.Header>
+                                            <Border Background="#FF175EB4" BorderBrush="#FF2B273A" BorderThickness="3,1" CornerRadius="5" Margin="0">
+                                                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Height="20" />
+                                                        <Label Padding="0" Content="Complete-Test-Text" FontSize="16" FontFamily="Bell MT" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center" Margin="2,0" />
+                                                    </StackPanel>
+                                                </Button>
+                                            </Border>
+                                        </TreeViewItem.Header>
+                                    </TreeViewItem>
+                                    <TreeViewItem Margin="0,5,0,0" >
+                                        <TreeViewItem.Header>
+                                            <Border Background="#FF175EB4" BorderBrush="#FF2B273A" BorderThickness="3,1" CornerRadius="5" Margin="0">
+                                                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Height="20" />
+                                                        <Label Padding="0" Content="Complete-Test-Text" FontSize="16" FontFamily="Bell MT" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center" Margin="2,0" />
+                                                    </StackPanel>
+                                                </Button>
+                                            </Border>
+                                        </TreeViewItem.Header>
+                                    </TreeViewItem>
+                                </TreeViewItem>
+                            </TreeView>
+                        </Grid>
+                    </TabItem>
+                
+                    <!-- Bank -->
+                    <TabItem x:Name="tab_bank" Margin="0" Padding="1,1,1,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" BorderBrush="Black" Foreground="#FF917575" Background="#FF8B4D4D" >
+                        <TabItem.Header>
+                            <Border BorderBrush="Black" Background="#FF595959" CornerRadius="2" BorderThickness="1" Margin="2,0" Height="32">
+                                <Border BorderThickness="1" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" >
+                                    <Image x:Name="img_bank_header" Source="pack://siteoforigin:,,,/bin/Debug/gfx/icon_questionmark.png" Margin="-1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="30" />
+                                </Border>
+                            </Border>
+                        </TabItem.Header>
+                        <Grid >
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
